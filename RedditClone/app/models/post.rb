@@ -10,4 +10,13 @@ class Post < ApplicationRecord
     primary_key: :id,
     foreign_key: :author_id,
     class_name: :User
+
+  has_many :post_subs,
+    primary_key: :id,
+    foreign_key: :post_id,
+    class_name: :PostSub
+
+  has_many :cross_subs,
+    through: :post_subs,
+    source: :sub
 end
