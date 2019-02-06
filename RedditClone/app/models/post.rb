@@ -14,7 +14,8 @@ class Post < ApplicationRecord
   has_many :post_subs,
     primary_key: :id,
     foreign_key: :post_id,
-    class_name: :PostSub
+    class_name: :PostSub,
+    inverse_of: :post
 
   has_many :subs,
     through: :post_subs,

@@ -19,7 +19,6 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @sub = Sub.find(params[:sub_id])
     @post.author_id = current_user.id
-    debugger
     if @post.save
       redirect_to sub_url(@sub)
     else

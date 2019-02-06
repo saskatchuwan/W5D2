@@ -3783,3 +3783,333 @@ Processing by PostsController#create as HTML
 Completed 200 OK in 2583ms (Views: 45.9ms | ActiveRecord: 10.9ms)
 
 
+Started POST "/subs/1/posts" for 127.0.0.1 at 2019-02-05 17:07:49 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"DpnFVjC3U/oOGSopHyaMLFgnKPkdBHlu15lxPVyd2sZC0V3PETj60+SoSJwN9gdvElRaca7WeE415hYaLEyWZA==", "post"=>{"title"=>"doop", "url"=>"", "content"=>"", "sub_ids"=>["2", "3", "1"]}, "sub_id"=>"1"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aGOwrpQa0z5Qcp0HEfQDtw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mSub Load (1.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs" WHERE "subs"."id" IN ($1, $2, $3)[0m  [["id", 2], ["id", 3], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:19
+  [1m[36mSub Load (0.5ms)[0m  [1m[34mSELECT  "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mSub Load (1.7ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  [1m[36mSub Load (1.0ms)[0m  [1m[34mSELECT "subs".* FROM "subs" WHERE "subs"."id" IN ($1, $2)[0m  [["id", 2], ["id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSub Load (0.4ms)[0m  [1m[34mSELECT  "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSub Load (0.5ms)[0m  [1m[34mSELECT  "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSub Load (0.5ms)[0m  [1m[34mSELECT  "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPostSub Create (17.3ms)[0m  [1m[32mINSERT INTO "post_subs" ("post_id", "sub_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 3], ["sub_id", 1], ["created_at", "2019-02-06 01:13:29.095782"], ["updated_at", "2019-02-06 01:13:29.095782"]]
+  [1m[35m (14.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPostSub Load (0.5ms)[0m  [1m[34mSELECT "post_subs".* FROM "post_subs" WHERE "post_subs"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mSub Load (1.5ms)[0m  [1m[34mSELECT "subs".* FROM "subs" INNER JOIN "post_subs" ON "subs"."id" = "post_subs"."sub_id" WHERE "post_subs"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mSub Load (0.5ms)[0m  [1m[34mSELECT  "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPostSub Load (0.4ms)[0m  [1m[34mSELECT "post_subs".* FROM "post_subs" WHERE "post_subs"."sub_id" = $1[0m  [["sub_id", 1]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "post_subs" ON "posts"."id" = "post_subs"."post_id" WHERE "post_subs"."sub_id" = $1[0m  [["sub_id", 1]]
+  [1m[36mSub Load (1.1ms)[0m  [1m[34mSELECT "subs".* FROM "subs" WHERE "subs"."id" IN ($1, $2)[0m  [["id", 3], ["id", 4]]
+  [1m[36mSub Load (0.4ms)[0m  [1m[34mSELECT "subs".* FROM "subs" WHERE "subs"."id" = $1[0m  [["id", 4]]
+  [1m[36mSub Load (0.5ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  [1m[36mSub Load (1.1ms)[0m  [1m[34mSELECT "subs".* FROM "subs" WHERE "subs"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Create (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "feaewa"], ["author_id", 2], ["created_at", "2019-02-06 01:21:48.504609"], ["updated_at", "2019-02-06 01:21:48.504609"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mSub Load (0.5ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  [1m[36mSub Load (0.6ms)[0m  [1m[34mSELECT "subs".* FROM "subs" WHERE "subs"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  [1m[36mSub Load (1.0ms)[0m  [1m[34mSELECT "subs".* FROM "subs" INNER JOIN "post_subs" ON "subs"."id" = "post_subs"."sub_id" WHERE "post_subs"."post_id" = $1[0m  [["post_id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mSub Load (0.8ms)[0m  [1m[34mSELECT "subs".* FROM "subs" WHERE "subs"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Create (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "feaewa"], ["author_id", 2], ["created_at", "2019-02-06 01:22:36.754805"], ["updated_at", "2019-02-06 01:22:36.754805"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mSub Load (0.7ms)[0m  [1m[34mSELECT "subs".* FROM "subs" WHERE "subs"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  [1m[36mSub Load (0.6ms)[0m  [1m[34mSELECT "subs".* FROM "subs" INNER JOIN "post_subs" ON "subs"."id" = "post_subs"."sub_id" WHERE "post_subs"."post_id" = $1[0m  [["post_id", 9]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mPostSub Create (0.6ms)[0m  [1m[32mINSERT INTO "post_subs" ("post_id", "sub_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 9], ["sub_id", 1], ["created_at", "2019-02-06 01:22:47.147479"], ["updated_at", "2019-02-06 01:22:47.147479"]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mPostSub Create (1.1ms)[0m  [1m[32mINSERT INTO "post_subs" ("post_id", "sub_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 9], ["sub_id", 2], ["created_at", "2019-02-06 01:22:47.152969"], ["updated_at", "2019-02-06 01:22:47.152969"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mSub Load (0.5ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  [1m[36mSub Load (0.6ms)[0m  [1m[34mSELECT "subs".* FROM "subs" WHERE "subs"."id" IN ($1, $2)[0m  [["id", 2], ["id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mSub Load (0.5ms)[0m  [1m[34mSELECT "subs".* FROM "subs" WHERE 1=0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "234323"], ["author_id", 2], ["created_at", "2019-02-06 01:24:08.999178"], ["updated_at", "2019-02-06 01:24:08.999178"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mSub Load (0.6ms)[0m  [1m[34mSELECT "subs".* FROM "subs" WHERE "subs"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mPostSub Create (1.2ms)[0m  [1m[32mINSERT INTO "post_subs" ("post_id", "sub_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 10], ["sub_id", 1], ["created_at", "2019-02-06 01:24:19.534291"], ["updated_at", "2019-02-06 01:24:19.534291"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mPostSub Create (0.4ms)[0m  [1m[32mINSERT INTO "post_subs" ("post_id", "sub_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 10], ["sub_id", 2], ["created_at", "2019-02-06 01:24:19.540456"], ["updated_at", "2019-02-06 01:24:19.540456"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mSub Load (0.4ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mSub Load (0.6ms)[0m  [1m[34mSELECT "subs".* FROM "subs" WHERE "subs"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "fawefeaw"], ["author_id", 1], ["created_at", "2019-02-06 01:26:19.701721"], ["updated_at", "2019-02-06 01:26:19.701721"]]
+  [1m[36mPostSub Create (0.7ms)[0m  [1m[32mINSERT INTO "post_subs" ("post_id", "sub_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 11], ["sub_id", 1], ["created_at", "2019-02-06 01:26:19.704635"], ["updated_at", "2019-02-06 01:26:19.704635"]]
+  [1m[36mPostSub Create (1.0ms)[0m  [1m[32mINSERT INTO "post_subs" ("post_id", "sub_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 11], ["sub_id", 2], ["created_at", "2019-02-06 01:26:19.707520"], ["updated_at", "2019-02-06 01:26:19.707520"]]
+  [1m[36mPostSub Create (0.6ms)[0m  [1m[32mINSERT INTO "post_subs" ("post_id", "sub_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 11], ["sub_id", 3], ["created_at", "2019-02-06 01:26:19.711410"], ["updated_at", "2019-02-06 01:26:19.711410"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:23
+  [1m[35m (23.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:23
+Started GET "/subs/1/posts" for 127.0.0.1 at 2019-02-05 17:27:00 -0800
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mSub Load (0.8ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/posts/new.html.erb:31
+  Rendered posts/new.html.erb within layouts/application (13.7ms)
+  
+ActionController::RoutingError (No route matches [GET] "/subs/1/posts"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Completed 200 OK in 1150995ms (Views: 372.6ms | ActiveRecord: 43.6ms)
+
+
+Started GET "/subs/1/posts" for 127.0.0.1 at 2019-02-05 17:27:07 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/subs/1/posts"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/subs/1/" for 127.0.0.1 at 2019-02-05 17:27:15 -0800
+Processing by SubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSub Load (1.4ms)[0m  [1m[34mSELECT  "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/subs_controller.rb:11
+  Rendering subs/show.html.erb within layouts/application
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "post_subs" ON "posts"."id" = "post_subs"."post_id" WHERE "post_subs"."sub_id" = $1[0m  [["sub_id", 1]]
+  ↳ app/views/subs/show.html.erb:9
+  Rendered subs/show.html.erb within layouts/application (83.6ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aGOwrpQa0z5Qcp0HEfQDtw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 269ms (Views: 186.9ms | ActiveRecord: 30.0ms)
+
+
+Started GET "/posts/9" for 127.0.0.1 at 2019-02-05 17:27:19 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  Rendered posts/show.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aGOwrpQa0z5Qcp0HEfQDtw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 56ms (Views: 51.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/subs/1/posts/new" for 127.0.0.1 at 2019-02-05 17:27:25 -0800
+Processing by PostsController#new as HTML
+  Parameters: {"sub_id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aGOwrpQa0z5Qcp0HEfQDtw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mSub Load (0.7ms)[0m  [1m[34mSELECT  "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:13
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mSub Load (0.4ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/posts/new.html.erb:31
+  Rendered posts/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 54ms (Views: 46.5ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/subs/1/posts" for 127.0.0.1 at 2019-02-05 17:27:30 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"ZAOgS3cmEPh8vOthqPjC7a+3aPbX7cgPWK9RxB73QvMoSzjSVqm50ZYNidS6KEmu5cQafmQ/yS+60DbjbiYOUQ==", "post"=>{"title"=>"sgdf", "url"=>"", "content"=>"sdgsf", "sub_ids"=>["2", "3", "1"]}, "sub_id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aGOwrpQa0z5Qcp0HEfQDtw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mSub Load (0.8ms)[0m  [1m[34mSELECT "subs".* FROM "subs" WHERE "subs"."id" IN ($1, $2, $3)[0m  [["id", 2], ["id", 3], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:19
+  [1m[36mSub Load (0.6ms)[0m  [1m[34mSELECT  "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:22
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:22
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:22
+  [1m[36mPost Create (1.3ms)[0m  [1m[32mINSERT INTO "posts" ("url", "title", "content", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["url", ""], ["title", "sgdf"], ["content", "sdgsf"], ["author_id", 2], ["created_at", "2019-02-06 01:27:30.848700"], ["updated_at", "2019-02-06 01:27:30.848700"]]
+  ↳ app/controllers/posts_controller.rb:22
+  [1m[36mPostSub Create (0.8ms)[0m  [1m[32mINSERT INTO "post_subs" ("post_id", "sub_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 12], ["sub_id", 2], ["created_at", "2019-02-06 01:27:30.852734"], ["updated_at", "2019-02-06 01:27:30.852734"]]
+  ↳ app/controllers/posts_controller.rb:22
+  [1m[36mPostSub Create (0.6ms)[0m  [1m[32mINSERT INTO "post_subs" ("post_id", "sub_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 12], ["sub_id", 3], ["created_at", "2019-02-06 01:27:30.855337"], ["updated_at", "2019-02-06 01:27:30.855337"]]
+  ↳ app/controllers/posts_controller.rb:22
+  [1m[36mPostSub Create (0.6ms)[0m  [1m[32mINSERT INTO "post_subs" ("post_id", "sub_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 12], ["sub_id", 1], ["created_at", "2019-02-06 01:27:30.857554"], ["updated_at", "2019-02-06 01:27:30.857554"]]
+  ↳ app/controllers/posts_controller.rb:22
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:22
+Redirected to http://localhost:3000/subs/1
+Completed 302 Found in 55ms (ActiveRecord: 11.1ms)
+
+
+Started GET "/subs/1" for 127.0.0.1 at 2019-02-05 17:27:30 -0800
+Processing by SubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSub Load (0.5ms)[0m  [1m[34mSELECT  "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/subs_controller.rb:11
+  Rendering subs/show.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "post_subs" ON "posts"."id" = "post_subs"."post_id" WHERE "post_subs"."sub_id" = $1[0m  [["sub_id", 1]]
+  ↳ app/views/subs/show.html.erb:9
+  Rendered subs/show.html.erb within layouts/application (4.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aGOwrpQa0z5Qcp0HEfQDtw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 59ms (Views: 55.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/subs/" for 127.0.0.1 at 2019-02-05 17:27:41 -0800
+Processing by SubsController#index as HTML
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.6ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:3
+  Rendered subs/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aGOwrpQa0z5Qcp0HEfQDtw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 72ms (Views: 69.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/subs/3" for 127.0.0.1 at 2019-02-05 17:27:42 -0800
+Processing by SubsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSub Load (0.4ms)[0m  [1m[34mSELECT  "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/subs_controller.rb:11
+  Rendering subs/show.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "post_subs" ON "posts"."id" = "post_subs"."post_id" WHERE "post_subs"."sub_id" = $1[0m  [["sub_id", 3]]
+  ↳ app/views/subs/show.html.erb:9
+  Rendered subs/show.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aGOwrpQa0z5Qcp0HEfQDtw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 47ms (Views: 43.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/subs/1" for 127.0.0.1 at 2019-02-05 17:27:45 -0800
+Processing by SubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSub Load (0.5ms)[0m  [1m[34mSELECT  "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/subs_controller.rb:11
+  Rendering subs/show.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "post_subs" ON "posts"."id" = "post_subs"."post_id" WHERE "post_subs"."sub_id" = $1[0m  [["sub_id", 1]]
+  ↳ app/views/subs/show.html.erb:9
+  Rendered subs/show.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aGOwrpQa0z5Qcp0HEfQDtw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 43ms (Views: 38.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/subs/2" for 127.0.0.1 at 2019-02-05 17:27:46 -0800
+Processing by SubsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSub Load (0.4ms)[0m  [1m[34mSELECT  "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/subs_controller.rb:11
+  Rendering subs/show.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "post_subs" ON "posts"."id" = "post_subs"."post_id" WHERE "post_subs"."sub_id" = $1[0m  [["sub_id", 2]]
+  ↳ app/views/subs/show.html.erb:9
+  Rendered subs/show.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aGOwrpQa0z5Qcp0HEfQDtw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 35ms (Views: 32.0ms | ActiveRecord: 1.5ms)
+
+
