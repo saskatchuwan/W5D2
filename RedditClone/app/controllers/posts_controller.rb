@@ -17,12 +17,13 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.sub_id = params[:sub_id]
+    @sub = Sub.find(params[:sub_id])
     @post.author_id = current_user.id
-
+    debugger
     if @post.save
-      redirect_to sub_url(@post.sub)
+      redirect_to sub_url(@sub)
     else
+      @subs = Sub.all
       flash.now[:errors] = @post.errors.full_messages
       render :new
     end
