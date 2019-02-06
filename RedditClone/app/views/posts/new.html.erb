@@ -28,6 +28,13 @@
   <br>
   <br>
 
+  <% @subs.each do |sub| %>
+    <input type="checkbox" name="post[sub_ids][]" value="<%= sub.id %>"><%= sub.title %><br>
+  <% end %>
+
+  <br>
+  <br>
+
   <input type="submit" value="Create New Post">
 
 </form>

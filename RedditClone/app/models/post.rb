@@ -16,7 +16,7 @@ class Post < ApplicationRecord
     foreign_key: :post_id,
     class_name: :PostSub
 
-  has_many :cross_subs,
+  has_many :subs,
     through: :post_subs,
     source: :sub
 end

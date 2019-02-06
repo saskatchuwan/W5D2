@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    @subs = Sub.all
     @sub = Sub.find(params[:sub_id])
     @post = Post.new
     render :new
@@ -52,7 +53,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:url, :title, :content)
+    params.require(:post).permit(:url, :title, :content, sub_ids: [])
   end
 
   def confirm_author
